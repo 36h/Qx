@@ -10,9 +10,9 @@ external-controller: 127.0.0.1:9090
 
 
 proxies:
-  - {name: 1, server: 1, port: 2, type: vmess, uuid: 9ae0143a-7b90-4598-9d4, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
-  - {name: 2, server: 1, port: 2, type: vmess, uuid: 9ae0143a-7b90-4598-9d4, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
-  - {name: 3, server: 1, port: 2, type: vmess, uuid: 9ae0143a-7b90-4598-9d4, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
+  - {name: 1, server: 1, port: 2, type: vmess, uuid: f6448f13-0bfa-454c-9338-c7bf16855ca7, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
+  - {name: 2, server: 1, port: 2, type: vmess, uuid: f6448f13-0bfa-454c-9338-c7bf16855ca7, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
+  - {name: 3, server: 1, port: 2, type: vmess, uuid: f6448f13-0bfa-454c-9338-c7bf16855ca7, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
 
 dns:
   enable: true
