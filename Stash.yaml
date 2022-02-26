@@ -72,8 +72,8 @@ proxy-groups:
     url: "http://www.gstatic.com/generate_204"
     interval: 300    
     proxies:
-      - 手动切换
       - DIRECT
+      - vmess
     
       
   - name: YouTube
