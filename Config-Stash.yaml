@@ -1,4 +1,4 @@
-# 将proxy-providers里面链接中的“你的订阅链接”全部替换，任意类型的链接均可,如v2ray、Clash等订阅链接
+
 
 mixed-port: 7890
 allow-lan: true
@@ -8,73 +8,11 @@ log-level: info
 ipv6: true
 external-controller: 127.0.0.1:9090
 
-proxy-providers:
 
-  #全部节点
-  All:
-    type: http
-    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true"
-    interval: 3600
-    path: ./all.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  #美国节点    
-  US:
-    type: http
-    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true&include=(?=.*(美|🇺🇲|US|(?i)States|American))"
-    interval: 3600
-    path: ./us.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  #香港节点
-  HK:
-    type: http
-    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true&include=(?=.*(港|🇭🇰|HK|(?i)Hong))"
-    interval: 3600
-    path: ./hk.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  #日本节点
-  JP:
-    type: http
-    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true&include=(?=.*(日|🇯🇵|东京|JP|(?i)Japan))"
-    interval: 3600
-    path: ./jp.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  #韩国节点
-  KR:
-    type: http
-    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true&include=(?=.*(韩|🇰🇷|首尔|KR|(?i)Korea))"
-    interval: 3600
-    path: ./kr.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-      
- #台湾节点
-  TW:
-    type: http
-    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true&include=(?=.*(台|🇨🇳|🇹🇼|湾|TW|(?i)Taiwan))"
-    interval: 3600
-    path: ./tw.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
+proxies:
+  - {name: 1, server: 1, port: 2, type: vmess, uuid: 9ae0143a-7b90-4598-9d4, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
+  - {name: 2, server: 1, port: 2, type: vmess, uuid: 9ae0143a-7b90-4598-9d4, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
+  - {name: 3, server: 1, port: 2, type: vmess, uuid: 9ae0143a-7b90-4598-9d4, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: www.microsoft.com}}}
 
 dns:
   enable: true
@@ -130,11 +68,6 @@ proxy-groups:
     proxies:
       - 手动切换
       - 自动选择
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
       - DIRECT
 
   - name: NETFLIX
@@ -143,11 +76,6 @@ proxy-groups:
     proxies:
       - 手动切换
       - 自动选择
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
       - DIRECT
 
 
@@ -165,11 +93,7 @@ proxy-groups:
       - DIRECT
       - 手动切换
       - 自动选择
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
+
 
   - name: 国外网站
     type: select
@@ -177,11 +101,6 @@ proxy-groups:
     proxies:
       - 手动切换
       - 自动选择
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
       - DIRECT
 
   - name: 苹果服务
@@ -191,11 +110,7 @@ proxy-groups:
       - 手动切换
       - 自动选择
       - DIRECT
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
+
 
   - name: 微软服务
     type: select
@@ -204,11 +119,7 @@ proxy-groups:
       - 手动切换
       - 自动选择
       - DIRECT
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
+
 
   - name: 网易音乐
     type: select
@@ -225,11 +136,7 @@ proxy-groups:
       - DIRECT
       - 手动切换
       - 自动选择
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
+
 
   - name: 漏网之鱼
     type: select
@@ -238,51 +145,8 @@ proxy-groups:
       - 手动切换
       - 自动选择
       - DIRECT
-      - 香港节点
-      - 日本节点
-      - 韩国节点
-      - 美国节点
-      - 台湾节点
 
-  - name: 香港节点
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-    use:
-      - HK
-    proxies:
-      - DIRECT
 
-  - name: 日本节点
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-    use:
-      - JP
-    proxies:
-      - DIRECT
-      
-  - name: 韩国节点
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-    use:
-      - KR
-    proxies:
-      - DIRECT
-      
-  - name: 台湾节点
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
-    use:
-      - TW
-    proxies:
-      - DIRECT
-
-  - name: 美国节点
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-    use:
-      - US
-    proxies:
-      - DIRECT
 
 rule-providers:
 
