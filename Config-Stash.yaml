@@ -42,8 +42,6 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
     - https://dns.google/dns-query
-
-proxies:
             
 proxy-groups:
   - name: 手动切换
